@@ -50,6 +50,7 @@
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-devtools</artifactId>
+     <scope>runtime</scope>
     <optional>true</optional>
 </dependency>
 		<dependency>
@@ -67,7 +68,7 @@
 	</dependencies>
  <packaging>jar</packaging>
 	<build>
-	 <finalName>command-line</finalName>
+	
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
