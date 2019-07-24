@@ -50,10 +50,7 @@ public class controller {
 		return "INSERTED SUCCESSFULLY.";
 	}
 	public static void main(String[] args) throws IOException {
-        String port= args[0];
-       // String frequency = args[1];
-        int time=(int) Long.parseLong(args[1]);  
-        if(args[0].equals("8085")) {
+        int time=(int) Long.parseLong(args[0]);  
 		SpringApplication.run(Server1Application.class, args);
 		ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
 		ses.scheduleAtFixedRate(new Runnable() {
@@ -70,5 +67,5 @@ public class controller {
 			}
 		    }
 		}, 0, time, TimeUnit.MILLISECONDS);
-        }}
+        }
 }
