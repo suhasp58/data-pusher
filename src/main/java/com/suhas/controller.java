@@ -39,11 +39,14 @@ public class controller {
 				//JSONObject value = n.getJSONObject(i);
 				//System.out.println("key:" + key);
 				//System.out.println("value:" + value);
-				System.out.println("Connection to server sucessfully established"+jedis.ping());
+				System.out.println("Connection to server sucessfully established "+jedis.ping());
 				jedis.set(key, obj.toString());
 
 			
-			//System.out.println("Inserted Successfully");
+			System.out.println("------------------------------------------------");
+			
+			System.out.println("Inserted Successfully");
+
 		} finally {
 			jedis.close();
 		}
