@@ -26,13 +26,12 @@ public class controller {
 		Properties prop = new Properties();
 		InputStream input = controller.class.getClassLoader().getResourceAsStream("application.properties");
 		prop.load(input);
-		//System.out.println("Prop-->" + prop.getProperty("filename"));
 		String data = new String(Files.readAllBytes(Paths.get(prop.getProperty("filename"))));
 		Jedis jedis = new Jedis(prop.getProperty("ip"), 6379);
 		try {
 
 			JSONObject obj = new JSONObject(data);
-			//JSONArray n = obj.getJSONArray("instance");
+			JSONArray n = obj.getJSONArray("instance");
 			//System.out.println(obj);
 			
 
@@ -40,17 +39,21 @@ public class controller {
 				//JSONObject value = n.getJSONObject(i);
 				//System.out.println("key:" + key);
 				//System.out.println("value:" + value);
-				System.out.println("Connection to server sucessfully established");
+				System.out.println("Connection to server sucessfully established"+jedis.ping());
 				jedis.set(key, obj.toString());
 
 			
-			System.out.println("Inserted Successfully");
+			//System.out.println("Inserted Successfully");
 		} finally {
 			jedis.close();
 		}
 		return "INSERTED SUCCESSFULLY.";
 	}
 	public static void main(String[] args) throws IOException {
+        String port= args[0];
+       // String frequency = args[1];
+        int time=(int) Long.parseLong(args[1]);  
+        if(args[0].equals("8085")) {
 		SpringApplication.run(Server1Application.class, args);
 		ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
 		ses.scheduleAtFixedRate(new Runnable() {
@@ -66,6 +69,6 @@ public class controller {
 				e.printStackTrace();
 			}
 		    }
-		}, 0, 10, TimeUnit.SECONDS);
-}
+		}, 0, time, TimeUnit.MILLISECONDS);
+        }}
 }
