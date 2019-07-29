@@ -19,6 +19,7 @@ import redis.clients.jedis.Jedis;
 
 //@RestController
 public class controller {
+	public static String filename;
 	//@RequestMapping("redisdata")
 	public static String sayHello() throws Exception {
 		Server1Application sa = new Server1Application();
@@ -26,7 +27,7 @@ public class controller {
 		Properties prop = new Properties();
 		InputStream input = controller.class.getClassLoader().getResourceAsStream("application.properties");
 		prop.load(input);
-		String data = new String(Files.readAllBytes(Paths.get(prop.getProperty("filename"))));
+		String data = new String(Files.readAllBytes(Paths.get(filename)));
 		Jedis jedis = new Jedis("localhost", 6379);
 		try {
 
@@ -54,6 +55,7 @@ public class controller {
 	}
 	public static void main(String[] args) throws IOException {
         int time=(int) Long.parseLong(args[0]);  
+       filename=args[1];
 		SpringApplication.run(Server1Application.class, args);
 		ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
 		ses.scheduleAtFixedRate(new Runnable() {
