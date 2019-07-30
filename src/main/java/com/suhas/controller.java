@@ -23,13 +23,12 @@ public class controller {
 	public static int portnumber;
 	//@RequestMapping("redisdata")
 	public static String sayHello() throws Exception {
-		//Server1Application sa = new Server1Application();
-        
+		
 		Properties prop = new Properties();
 		InputStream input = controller.class.getClassLoader().getResourceAsStream("application.properties");
 		prop.load(input);
 		String data = new String(Files.readAllBytes(Paths.get(filename)));
-		Jedis jedis = new Jedis("localhost", 6379);
+		Jedis jedis = new Jedis("localhost", 8080);
 		try {
 
 			JSONObject obj = new JSONObject(data);
