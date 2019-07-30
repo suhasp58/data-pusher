@@ -19,10 +19,11 @@ import redis.clients.jedis.Jedis;
 
 //@RestController
 public class controller {
-	public static String filename;
+	public static String filename,key;
+	public static int portnumber;
 	//@RequestMapping("redisdata")
 	public static String sayHello() throws Exception {
-		Server1Application sa = new Server1Application();
+		//Server1Application sa = new Server1Application();
         
 		Properties prop = new Properties();
 		InputStream input = controller.class.getClassLoader().getResourceAsStream("application.properties");
@@ -34,12 +35,20 @@ public class controller {
 			JSONObject obj = new JSONObject(data);
 			JSONArray n = obj.getJSONArray("instance");
 			//System.out.println(obj);
-			
+			if(portnumber==8081) {
+			 key = "10.37.56.1";
+			}
+			if(portnumber==8082) {
+				 key = "10.37.56.2";
+				}
 
-				String key = "10.37.56.1";
-				//JSONObject value = n.getJSONObject(i);
-				//System.out.println("key:" + key);
-				//System.out.println("value:" + value);
+			if(portnumber==8083) {
+				 key = "10.37.56.11";
+				}
+			if(portnumber==8084) {
+				 key = "10.37.56.12";
+				}
+			
 				System.out.println("Connection to server sucessfully established "+jedis.ping());
 				jedis.set(key, obj.toString());
 
@@ -54,8 +63,9 @@ public class controller {
 		return "INSERTED SUCCESSFULLY.";
 	}
 	public static void main(String[] args) throws IOException {
-        int time=(int) Long.parseLong(args[0]);  
-       filename=args[1];
+		portnumber=(int) Long.parseLong(args[0]); 
+        int time=(int) Long.parseLong(args[1]);  
+       filename=args[2];
 		SpringApplication.run(Server1Application.class, args);
 		ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
 		ses.scheduleAtFixedRate(new Runnable() {
