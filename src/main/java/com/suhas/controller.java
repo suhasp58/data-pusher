@@ -28,7 +28,7 @@ public class controller {
 		InputStream input = controller.class.getClassLoader().getResourceAsStream("application.properties");
 		prop.load(input);
 		String data = new String(Files.readAllBytes(Paths.get(filename)));
-		Jedis jedis = new Jedis("localhost", 6379);
+		Jedis jedis = new Jedis("0.0.0.0", 6379);
 		try {
 
 			JSONObject obj = new JSONObject(data);
