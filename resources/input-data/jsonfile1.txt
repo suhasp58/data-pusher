@@ -1,0 +1,189 @@
+{
+  "instance": [
+    {
+      "port": 8082,
+      "CeTConfig": {
+        "data": [
+          {
+            "cet-hostname": "c4z-pr-esct-a01",
+            "instance-name": "01 BATS",
+            "undefined-1": "2376",
+            "Build_number": "CspEsignal Rev 2.5 Build 26b",
+            "source-ids": "729,922"
+          }
+        ]
+      },
+      "CeTStatus": {
+        "InputNode": [
+          {
+            "undefined-host": "DTCSP-01-31194",
+            "undefined-IP": "10.37.60.157",
+            "sys-type": "primary",
+            "sys-status": "Connected"
+          },
+          {
+            "undefined-host": "DTCSP-02-31195",
+            "undefined-IP": "10.37.60.158",
+            "sys-type": "Backup",
+            "sys-status": "Connected"
+          }
+        ],
+        "Output": [
+          {
+            "feed-name": "C4Z-BATS",
+            "multicast-group": "239.176.11.76:12576",
+            "output-status": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "port": 8085,
+      "CeTConfig": {
+        "data": [
+          {
+            "cet-hostname": "c4z-pr-esct-a01",
+            "instance-name": "01 CEP",
+            "undefined-1": "2479",
+            "Build_number": "CspEsignal Rev 2.5 Build 26e",
+            "source-ids": "1325,1326,1327,1328,1329,1330,1331,1338,1369,1392,1537,1538,1539,1540,922"
+          }
+        ]
+      },
+      "CeTStatus": {
+        "InputNode": [
+          {
+            "undefined-host": "DTCSP-06-31199",
+            "undefined-IP": "10.37.60.162",
+            "sys-type": "primary",
+            "sys-status": "Connected"
+          },
+          {
+            "undefined-host": "DTCSP-03-31196",
+            "undefined-IP": "10.37.60.159",
+            "sys-type": "Backup",
+            "sys-status": "Connected"
+          }
+        ],
+        "Output": [
+          {
+            "feed-name": "C4Z-CEPData",
+            "multicast-group": "239.176.11.223:12723",
+            "output-status": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "port": 8088,
+      "CeTConfig": {
+        "data": [
+          {
+            "cet-hostname": "c4z-pr-esct-a01",
+            "instance-name": "01 CEP2",
+            "undefined-1": "2480",
+            "Build_number": "CspEsignal Rev 2.5 Build 26e",
+            "source-ids": "1036,1379,1393,1394,1395,1542,1574,1578,922"
+          }
+        ]
+      },
+      "CeTStatus": {
+        "InputNode": [
+          {
+            "undefined-host": "DTCSP-06-31199",
+            "undefined-IP": "10.37.60.162",
+            "sys-type": "primary",
+            "sys-status": "Connected"
+          },
+          {
+            "undefined-host": "DTCSP-03-31196",
+            "undefined-IP": "10.37.60.159",
+            "sys-type": "Backup",
+            "sys-status": "Connected"
+          }
+        ],
+        "Output": [
+          {
+            "feed-name": "C2Z-CEP2Data",
+            "multicast-group": "239.176.11.46:12546",
+            "output-status": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "port": 8080,
+      "CeTConfig": {
+        "data": [
+          {
+            "cet-hostname": "c4z-pr-esct-a01",
+            "instance-name": "01 Cet Ip4Ctf",
+            "undefined-1": "2476",
+            "Build_number": "CspEsignal Rev 2.5 Build 26j",
+            "source-ids": "1026,1029,1032,1033,1034,1037,1039,1042,1044,1045,1076,1077,1078,1079,1096,1166,1237,1238,1239,1240,1241,1267,1370,209,609,611,613,644,660,711,725,746,890,906,922,953"
+          }
+        ]
+      },
+      "CeTStatus": {
+        "InputNode": [
+          {
+            "undefined-host": "DTCSP-01-31194",
+            "undefined-IP": "10.37.60.157",
+            "sys-type": "primary",
+            "sys-status": "Connected"
+          },
+          {
+            "undefined-host": "DTCSP-02-31195",
+            "undefined-IP": "10.37.60.158",
+            "sys-type": "Backup",
+            "sys-status": "Connected"
+          }
+        ],
+        "Output": [
+          {
+            "feed-name": "C4Z-Ip4Ctf",
+            "multicast-group": "239.176.11.53:12553",
+            "output-status": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "port": 8081,
+      "CeTConfig": {
+        "data": [
+          {
+            "cet-hostname": "c4z-pr-esct-a01",
+            "instance-name": "01 CTF Futures",
+            "undefined-1": "2477",
+            "Build_number": "CspEsignal Rev 2.5 Build 26g",
+            "source-ids": "1172,1188,1189,1346,1347,1348,1349,1350,1390,270,302,303,332,756,922,935"
+          }
+        ]
+      },
+      "CeTStatus": {
+        "InputNode": [
+          {
+            "undefined-host": "DTCSP-01-32314",
+            "undefined-IP": "10.37.60.157",
+            "sys-type": "primary",
+            "sys-status": "Connected"
+          },
+          {
+            "undefined-host": "DTCSP-02-31195",
+            "undefined-IP": "10.37.60.158",
+            "sys-type": "Backup",
+            "sys-status": "Connected"
+          }
+        ],
+        "Output": [
+          {
+            "feed-name": "C4Z-CTF-Futures",
+            "multicast-group": "239.176.11.23:12523",
+            "output-status": "primary"
+          }
+        ]
+      }
+    }
+  ]
+}
