@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk
 WORKDIR /usr/app
-COPY ./data-pusher/target/springredis-0.0.1-SNAPSHOT.jar  /usr/app
+COPY springredis-0.0.1-SNAPSHOT.jar  /usr/app
 COPY jsonfile1.txt /usr/app
 ENTRYPOINT ["java","-jar","-Dserver.port=8081","springredis-0.0.1-SNAPSHOT.jar","8081", "5000","jsonfile1.txt"]
